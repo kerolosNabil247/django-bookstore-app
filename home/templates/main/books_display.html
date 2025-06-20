@@ -1,0 +1,23 @@
+{% extends 'main/layout.html'%}
+
+{% block main-content %}
+<div class="container">
+    <div class="row mt-3 align-items-center">
+        <h1 class="col-6">Books :</h1>
+        <a class="col-2 btn btn-info text-white" href="{% url 'home:book-create' %}">Create Book</a>
+    </div>
+    
+    {% for book in books %}
+    <div class="row">
+        <div class="card col-10">
+            <div class="card-body row align-items-center">
+                <p class="col-3 align-items-center">{{book.title}}</p>
+                <a class="col-2 btn btn-primary me-2" href="{% url 'home:book-details' book.id %}">view</a>
+                <a class="col-2 btn btn-warning me-2" href="{% url 'home:book-update' book.id %}">update</a>
+                <a class="col-2 btn btn-danger me-2" href="{% url 'home:book-delete' book.id %}">delete</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

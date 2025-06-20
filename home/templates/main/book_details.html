@@ -1,0 +1,14 @@
+{% extends 'main/layout.html'%}
+{% block main-content%}
+<div class="container">
+    <div class="row">
+        <h1 class="col-6">Book Details:</h1>
+    </div>
+    <div class="row">
+        <p>Book Title: {{book.title}}</p>
+        <p>Book Description: {{book.description}}</p>
+        <p>Book Views: {{book.views}}</p>
+        <p>Book Rate: {{book.rate}}</p>
+    </div>
+</div>
+{% endblock %}
